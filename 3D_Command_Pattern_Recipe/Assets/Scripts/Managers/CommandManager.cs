@@ -23,8 +23,9 @@ public class CommandManager : MonoBehaviour {
         _commandBuffer.Add(command);
     }
     //plays back all the commands with a 1-second delay
-    public void Play(){
+    public void Play(string beep){
         StartCoroutine(PlayRoutine());
+        Debug.Log(beep);
 
     }
 
