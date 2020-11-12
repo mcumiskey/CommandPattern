@@ -2097,7 +2097,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a14976a6364b4962b79a8250cb7c626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InstructionSteps: []
+  InstructionSteps:
+  - stepIsComplete: 0
+    stepNumber: 0
+    instructiontext: 1) Grab bread
+    stepDisplay: {fileID: 1303509429}
+  - stepIsComplete: 1
+    stepNumber: 1
+    instructiontext: 2) Unscrew Jar
+    stepDisplay: {fileID: 1842375700}
+  - stepIsComplete: 0
+    stepNumber: 0
+    instructiontext: 3) Scoop Peanut Butter
+    stepDisplay: {fileID: 1183115823}
+  - stepIsComplete: 0
+    stepNumber: 0
+    instructiontext: 4) Spread Peanut Butter
+    stepDisplay: {fileID: 819840807}
 --- !u!1 &1303509427
 GameObject:
   m_ObjectHideFlags: 0

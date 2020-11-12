@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 //System.Serializable allows these to be created from the unity inspector
 [System.Serializable]
@@ -11,5 +12,6 @@ public class Instruction {
     //What number step is this?
     public int stepNumber;
     //what is the basic instruction?
-    public string instruction;
+    public string instructiontext;
+    public TextMeshProUGUI stepDisplay;
 }

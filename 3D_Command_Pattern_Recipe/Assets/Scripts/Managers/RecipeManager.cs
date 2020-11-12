@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using TMPro;
 
 public class RecipeManager : MonoBehaviour {
 
@@ -12,7 +13,7 @@ public class RecipeManager : MonoBehaviour {
 
     private List<ICommand> _commandBuffer = new List<ICommand>();
 
-    [Header("Instruction Steps")]
+    [Header("Add new Instruction Steps here")]
     [Tooltip("An 'Instruction' notes if the step has been completed, has the step number, and the text to be displayed")]
     public Instruction [] InstructionSteps;
 
@@ -22,6 +23,14 @@ public class RecipeManager : MonoBehaviour {
         } else {
             _instance = this;
         }
+    }
+
+    void Start () {
+        for(int i = 0; i < InstructionSteps.Length; i++){
+            //assigns the string to the TMP gui 
+            InstructionSteps[i].stepDisplay.text = InstructionSteps[i].instructiontext;
+        }
+
     }
 
     //adds commands to the Command Buffer
