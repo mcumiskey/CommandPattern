@@ -4,11 +4,17 @@ using System.Linq;
 using UnityEngine;
 
 public class RecipeManager : MonoBehaviour {
+
+
     private static RecipeManager _instance;
 
     public static RecipeManager Instance { get { return _instance; } }
 
     private List<ICommand> _commandBuffer = new List<ICommand>();
+
+    [Header("Instruction Steps")]
+    [Tooltip("An 'Instruction' notes if the step has been completed, has the step number, and the text to be displayed")]
+    public Instruction [] InstructionSteps;
 
     private void Awake() {
         if (_instance != null && _instance != this) {
