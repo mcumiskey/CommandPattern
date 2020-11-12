@@ -26,8 +26,10 @@ public class RecipeManager : MonoBehaviour {
     }
 
     void Start () {
+        //goes through the written instructions
         for(int i = 0; i < InstructionSteps.Length; i++){
             //assigns the string to the TMP gui 
+            //I added no checks to this aside from the checks of creation. 
             InstructionSteps[i].stepDisplay.text = InstructionSteps[i].instructiontext;
         }
 

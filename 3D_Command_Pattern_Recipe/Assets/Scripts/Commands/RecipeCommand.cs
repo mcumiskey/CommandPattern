@@ -5,6 +5,7 @@ using UnityEngine;
 public class RecipeCommand : ICommand
 {
 
+	//I'm replacing this with instructions in the manager 
 	private string[] _instructionList = {
 		"1) Grab bread", 
 		"2) Unscrew Jar", 
