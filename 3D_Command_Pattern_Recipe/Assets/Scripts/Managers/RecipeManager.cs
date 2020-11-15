@@ -32,17 +32,24 @@ public class RecipeManager : MonoBehaviour {
         //goes through the written instructions
         for(int i = 0; i < InstructionSteps.Length; i++){
             //assigns the string to the TMP gui 
-            //I added no checks to this aside from the checks of creation. 
+            //I added no checks to this aside from the checks of creation.
+
+            //If an instruction has no text, do not display it in the space
+            if(InstructionSteps[i].instructiontext == ""){
+                Debug.Log(InstructionSteps[i].instructiontext);
+                InstructionSteps[i].toggle.gameObject.SetActive(false);
+            }
+            //otherwise display it as steps
             InstructionSteps[i].stepDisplay.text = InstructionSteps[i].instructiontext;
         }
 
     }
 
     //adds commands to the Command Buffer
-    public void AddCommand (Instruction command) {
-        //_commandBuffer.Add(command);
+    public void AddCommand (ICommand command) {
+        _commandBuffer.Add(command);
         //_instructionBuffer.Add(command);
-        Debug.Log("ADD command - " + command.instructiontext);
+        Debug.Log("ADD command - ");
     }
 
     // GO FORWARD - move forward one step in the recipe

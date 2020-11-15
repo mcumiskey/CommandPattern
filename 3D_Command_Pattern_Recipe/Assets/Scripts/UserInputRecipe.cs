@@ -13,32 +13,32 @@ public class UserInputRecipe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            Ray rayOrigin = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hitInfo;
+        // if(Input.GetMouseButtonDown(0))
+        // {
+        //     Ray rayOrigin = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //     RaycastHit hitInfo;
 
-            if(Physics.Raycast(rayOrigin, out hitInfo))
-            {
-                /*
-                if (hitInfo.collider.tag == "forwardbutton")
-                {
-                	Debug.Log("Forward button pressed.");
-                    //execute 
-                    ICommand click = new RecipeCommand();
-                    click.Execute();
-                    RecipeManager.Instance.AddCommand(click);
-                }
-                else if (hitInfo.collider.tag == "backwardbutton")
-                {
-                	Debug.Log("Undo button pressed.");
-                	// undo
-                	ICommand click = new RecipeCommand();
-                    click.Undo();
-                    RecipeManager.Instance.AddCommand(click);
-                }
-                */
-            }
-        }
+        //     if(Physics.Raycast(rayOrigin, out hitInfo))
+        //     {
+        //         /*
+        //         if (hitInfo.collider.tag == "forwardbutton")
+        //         {
+        //         	Debug.Log("Forward button pressed.");
+        //             //execute 
+        //             ICommand click = new RecipeCommand();
+        //             click.Execute();
+        //             RecipeManager.Instance.AddCommand(click);
+        //         }
+        //         else if (hitInfo.collider.tag == "backwardbutton")
+        //         {
+        //         	Debug.Log("Undo button pressed.");
+        //         	// undo
+        //         	ICommand click = new RecipeCommand();
+        //             click.Undo();
+        //             RecipeManager.Instance.AddCommand(click);
+        //         }
+        //         */
+        //     }
+        // }
     }
 }
