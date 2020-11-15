@@ -63,14 +63,20 @@ public class RecipeManager : MonoBehaviour {
         //call the execute method of the current step
         InstructionSteps[currentStep].Execute();
         //AddCommand(InstructionSteps[currentStep].Execute());
-        currentStep++;
-        centerText.text = InstructionSteps[currentStep].instructiontext;
+        if (currentStep < InstructionSteps.Length-2)
+        {
+            currentStep++;
+            centerText.text = InstructionSteps[currentStep].instructiontext;
+        }
     }
 
     public void PreviousStep(){
         InstructionSteps[currentStep].Undo();
-        currentStep--;
-        centerText.text = InstructionSteps[currentStep].instructiontext;
+        if (currentStep != 0)
+        {
+            currentStep--;
+            centerText.text = InstructionSteps[currentStep].instructiontext;
+        }
     }
 
     // GO FORWARD - move forward one step in the recipe
