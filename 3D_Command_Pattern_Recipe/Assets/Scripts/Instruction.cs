@@ -21,11 +21,15 @@ public class Instruction : ICommand {
     //command from the ICommand Interface
     public void Execute(){
         Debug.Log("Executing!");
+        toggle.isOn = true;
+        stepNumber++;
     } 
 
     //command from the ICommand Interface
     public void Undo(){
         Debug.Log("Undoing!");
+        toggle.isOn = false;
+        stepNumber--;
     } 
 
 }
