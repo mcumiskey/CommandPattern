@@ -12,12 +12,14 @@ public class RecipeManager : MonoBehaviour {
     public static RecipeManager Instance { get { return _instance; } }
 
     private List<ICommand> _commandBuffer = new List<ICommand>();
+    //private List<Instruction> _instructionBuffer = new List<Instruction>();
 
     [Header("Add new Instruction Steps here")]
     [Tooltip("An 'Instruction' notes if the step has been completed, has the step number, and the text to be displayed")]
     public Instruction [] InstructionSteps;
 
     private void Awake() {
+        Debug.Log("Awakening");
         if (_instance != null && _instance != this) {
             Destroy(this.gameObject);
         } else {
@@ -26,6 +28,7 @@ public class RecipeManager : MonoBehaviour {
     }
 
     void Start () {
+        Debug.Log("Starting manager!");
         //goes through the written instructions
         for(int i = 0; i < InstructionSteps.Length; i++){
             //assigns the string to the TMP gui 
@@ -36,8 +39,10 @@ public class RecipeManager : MonoBehaviour {
     }
 
     //adds commands to the Command Buffer
-    public void AddCommand (ICommand command) {
-        _commandBuffer.Add(command);
+    public void AddCommand (Instruction command) {
+        //_commandBuffer.Add(command);
+        //_instructionBuffer.Add(command);
+        Debug.Log("ADD command - " + command.instructiontext);
     }
 
     // GO FORWARD - move forward one step in the recipe
@@ -51,7 +56,7 @@ public class RecipeManager : MonoBehaviour {
     // GO FORWARD ROUTINE - executes the command
     IEnumerator GoForwardRoutine() {
         Debug.Log("Running GoForwardRoutine.... ");
-        foreach(var command in _commandBuffer){
+        foreach(var command in _commandBuffer){ // TODO: Replace _commandBuffer with _instructionBuffer
         	Debug.Log("Executing " + command);
             command.Execute();
             yield return new WaitForSeconds(1.0f);
@@ -69,7 +74,7 @@ public class RecipeManager : MonoBehaviour {
     // GO BACKWARD ROUTINE - executes the command
     IEnumerator GoBackwardRoutine() {
     	Debug.Log("Running GoBackwardRoutine.... ");
-        foreach(var command in Enumerable.Reverse(_commandBuffer)){
+        foreach(var command in Enumerable.Reverse(_commandBuffer)){ // TODO: Replace _commandBuffer with _instructionBuffer
         	Debug.Log("Undoing " + command);
             command.Undo();
             yield return new WaitForSeconds(1.0f);
@@ -90,6 +95,7 @@ public class RecipeManager : MonoBehaviour {
     
     public void Reset(){
         _commandBuffer.Clear();
+        //_instructionBuffer.Clear();
     }
 }
 

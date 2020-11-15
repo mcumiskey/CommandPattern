@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RecipeCommand : ICommand
+public class RecipeCommand : ICommand // TODO: Replace ICommand with Instruction
 {
 
 	//I'm replacing this with instructions in the manager 
@@ -15,6 +15,7 @@ public class RecipeCommand : ICommand
 	private int _instructionCounter = 0;
 
     public RecipeCommand () {
+        Debug.Log("RecipeCommand()");
         
     }
 

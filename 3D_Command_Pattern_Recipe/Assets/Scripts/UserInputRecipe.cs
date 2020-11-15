@@ -20,6 +20,7 @@ public class UserInputRecipe : MonoBehaviour
 
             if(Physics.Raycast(rayOrigin, out hitInfo))
             {
+                /*
                 if (hitInfo.collider.tag == "forwardbutton")
                 {
                 	Debug.Log("Forward button pressed.");
@@ -36,6 +37,7 @@ public class UserInputRecipe : MonoBehaviour
                     click.Undo();
                     RecipeManager.Instance.AddCommand(click);
                 }
+                */
             }
         }
     }
