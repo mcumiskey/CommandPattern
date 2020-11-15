@@ -63,7 +63,7 @@ public class RecipeManager : MonoBehaviour {
         //call the execute method of the current step
         InstructionSteps[currentStep].Execute();
         //AddCommand(InstructionSteps[currentStep].Execute());
-        if (currentStep < InstructionSteps.Length-2)
+        if (currentStep < InstructionSteps.Length-1)
         {
             currentStep++;
             centerText.text = InstructionSteps[currentStep].instructiontext;
